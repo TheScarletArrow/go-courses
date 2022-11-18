@@ -3,7 +3,7 @@ package main
 import (
 	"testing"
 
-	"github.com/CodingSquire/go-courses/lection_2/hw/converter/converter"
+	"../converter/converter"
 )
 
 func TestIntegerToRoman(t *testing.T) {
