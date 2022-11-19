@@ -6,7 +6,11 @@ type converter struct {
 	symbols []string
 	values  []int
 }
+type Converter interface {
+	IntToRoman(num int) string
+}
 
+// IntToRoman converts integer to roman
 func (c *converter) IntToRoman(num int) string {
 	var roman strings.Builder
 
@@ -19,15 +23,9 @@ func (c *converter) IntToRoman(num int) string {
 
 	return roman.String()
 }
-
-type Converter interface {
-	IntToRoman(num int) string
-}
-
 func NewConverter(values []int, symbols []string) Converter {
-	c := &converter{
+	return &converter{
 		symbols: symbols,
 		values:  values,
 	}
-	return c
 }
